@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm List</title>
+    <link rel="stylesheet" href="{% static 'scraper/styles.css' %}">
+</head>
+<body>
+    <h1>Algorithm List</h1>
+    <ul>
+        {% for algorithm in algorithms %}
+            <li>
+                <h2>{{ algorithm.title }}</h2>
+                <p>{{ algorithm.description }}</p>
+                <a href="{{ algorithm.url }}">Read more</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
